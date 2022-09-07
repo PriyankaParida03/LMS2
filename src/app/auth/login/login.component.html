@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-6">
+          <div class= "card">
+              <div class="text-center">
+                  <h1>School login</h1>
+                  <h5>Wel-com Back</h5>  <hr>
+          
+              </div>
+              <form [formGroup]="loginForm" (ngSubmit)="login()">
+                  <div class="mb-3">
+                    <label class="form-label">Email address</label>
+                    <input formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" 
+                    type="email" class="form-control" aria-describedby="emailHelp">
+                    <div *ngIf="email">
+                      <div *ngIf="!email.valid && (email.dirty ||email.touched)" class="text-danger mt-1">
+                        please enter valid Email id
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input formControlName="password" type="password" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
+                    <div *ngIf="password">
+                      <div *ngIf="!password.valid && (password.dirty ||password.touched)" class="text-danger mt-1">
+                        This field is mandetory
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <button type="submit"[disabled]= "!loginForm.valid" class="btn btn-primary">Login</button>
+                </form>
+                <a routerLink="/signup">New user? Click to sign up!</a>
+          </div>
+      </div>
+  </div>
+</div>

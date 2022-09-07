@@ -1,0 +1,38 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color: rgb(239, 247, 249);">Leave management System</h1>
+        <div class="d-flex">
+        </div>
+    </div>
+</nav>
+
+<div class="row mx-5 mt-5">
+    <div class="col-12 text-center" *ngIf="leaveDetails.length <=0">No leaves applied</div>
+    <table class="table" *ngIf="leaveDetails.length > 0">
+        <thead>
+            <tr>
+                <th>Sr. No.</th>
+                <th>Faculty Name</th>
+                <th>From Date</th>
+                <th>To Date</th>
+                <th>Reason</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of leaveDetails; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{item.username}}</td>
+                <td>{{item.from_date.day}} - {{item.from_date.month}} - {{item.from_date.year}}</td>
+                <td>{{item.to_date.day}} - {{item.to_date.month}} - {{item.to_date.year}}</td>
+                <td>{{item.reason}}</td>
+                <td>{{item.status}}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="approveLeave(item)">Approve</button>&nbsp;
+                    <button class="btn btn-danger" (click)="RejectLeave(item)">Reject</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

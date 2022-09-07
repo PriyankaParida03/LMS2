@@ -1,0 +1,101 @@
+<nav class="navbar navbar-light bg-primary" >
+    <div class="container-fluid">
+        <h1 style="color: rgb(239, 247, 249);">Staff Management System</h1>
+        <input class="form-control" type="text" name="fullname" [(ngModel)]= "search"
+        placeholder="Search Bar" >
+        <div class="d-flex">
+            <button (click)="clickAddEmploy()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class=" btn btn-success">Add Staff</button>
+        </div>
+    </div>
+</nav>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+          <th scope="col">SI #</th>
+          <th (click)= "sort('id')" scope="col"> User Id&nbsp;<i class="fa fa-sort"></i></th>
+          <th (click)= "sort('fullname')" scope="col"> Full Name&nbsp;<i class="fa fa-sort"></i></th>
+            <th scope="col">User Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor= "let row of staffData | orderBy: key: reverse |filter: search
+        | paginate:{itemsPerPage:10,currentPage:p }; let i = index">
+        <td> {{i+1}}</td>
+            <td> {{row.id}}</td>
+            <td>{{row.fullname}}</td>
+            <td>{{row.username}}</td>
+            <td>{{row.email}}</td>
+            <td>{{row.mobile}}</td>
+            <td>
+                <button (click) ="onEdit(row)" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info">View</button>
+                <button (click) = "deleteStaff(row.id) " class="btn btn-danger mx-3">Delete</button>
+             </td>
+          
+        </tr>
+    </tbody>
+    <pagination-controls (pageChange)= "p = $event"></pagination-controls>
+</table>
+
+  
+  <!-- modl class -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Staff Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup] = "formvalue" >
+                <div class="mb-3">
+                  <label  class="form-label">Full Name</label>
+                  <input formControlName="fullname" type="text" class="form-control" >
+
+                  <div *ngIf="fullname">
+                    <div *ngIf="!fullname.valid && (fullname.dirty ||fullname.touched)" class="text-danger mt-1">
+                      * this field is require
+                    </div>
+                  </div>
+                
+                  <!-- <span style="color: red;" *ngIf= " fullname && fullname.invalid && fullname.touched"> 
+                    * this field is required</span> -->
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Username</label>
+                  <input formControlName="username" type="text" class="form-control">
+                
+                  <span style="color: red;" *ngIf= " username && username.invalid && username.touched"> 
+                    * this field is required</span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email Id</label>
+                    <input formControlName="email" type="text" class="form-control" >
+                    <div *ngIf="email">
+                      <div *ngIf="!email.valid && (email.dirty ||email.touched)" class="text-danger mt-1">
+                        * please enter a valid email id
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Mobile Number</label>
+                    <input formControlName="contact" type="text" class="form-control" >
+                    <span style="color: red;" *ngIf= " contact && contact.invalid && contact.touched"> 
+                      * Please enter a 10 digit mobile number</span>
+                  </div>
+                  
+                
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button"  id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" *ngIf="showAdd" (click)="poststaffDetails()" class="btn btn-primary" [disabled] = "formvalue.invalid">Add</button>
+          <button type="button" *ngIf="showUpdate" (click)="updateStaffDetails()" class="btn btn-primary">Update</button>
+      </div>
+      </div>
+    </div>
+  </div> 

@@ -1,0 +1,359 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "sms": [
+    {
+      "id": 19,
+      "fullname": "rocky",
+      "username": "rocky123",
+      "email": "rocky@gmail.com",
+      "mobile": "878828789"
+    },
+    {
+      "id": 20,
+      "fullname": "priya",
+      "username": "priya@1",
+      "email": "priyanak@gmail.com",
+      "mobile": "12345678890"
+    },
+    {
+      "id": 24,
+      "fullname": "rahi",
+      "username": "rahi12",
+      "email": "rahi2gmail.com",
+      "mobile": "1234567890"
+    },
+    {
+      "id": 25,
+      "fullname": null,
+      "username": null,
+      "email": null,
+      "mobile": null
+    }
+  ],
+  "signup": [
+    {
+      "name": "user1",
+      "username": "user1",
+      "email": "user@1",
+      "contact": "123456789",
+      "department": "3",
+      "password": "123",
+      "image": "",
+      "id": 1,
+      "role": "staff"
+    },
+    {
+      "name": "",
+      "username": "user2",
+      "email": "user2@gmail.com",
+      "contact": 123456789,
+      "department": "Civil",
+      "password": "1234",
+      "image": "",
+      "id": 2
+    },
+    {
+      "name": "user2",
+      "username": "",
+      "email": "",
+      "contact": "",
+      "department": "",
+      "password": "",
+      "image": "",
+      "id": 3
+    },
+    {
+      "name": "vani",
+      "username": "vani@1",
+      "email": "vani@gmail.com",
+      "contact": 1234567890,
+      "department": "Mechanical",
+      "password": "vani",
+      "image": "",
+      "id": 4
+    },
+    {
+      "name": "Rahul",
+      "username": "Rahul",
+      "email": "",
+      "contact": "",
+      "department": "",
+      "password": "",
+      "image": "",
+      "role": "",
+      "id": 5
+    },
+    {
+      "name": "rahul",
+      "username": "rahul@1",
+      "email": "rahul",
+      "contact": "",
+      "department": "",
+      "password": "",
+      "image": "",
+      "role": "",
+      "id": 6
+    },
+    {
+      "name": "Sandeep",
+      "username": "Sandeep",
+      "email": "Sandeep@gmail.com",
+      "contact": 1234567890,
+      "department": "Civil",
+      "password": "Sandeep",
+      "image": "",
+      "role": "HOD",
+      "id": 7
+    },
+    {
+      "name": "Priyanka Parida",
+      "username": "priyanka",
+      "email": "",
+      "contact": "",
+      "department": "",
+      "password": "",
+      "image": "",
+      "role": "",
+      "id": 8
+    },
+    {
+      "name": "priyanka parida",
+      "username": "priyanka12",
+      "email": "priyankaparida@gmail.com",
+      "contact": 9746734683,
+      "department": "Civil",
+      "password": "1234567890",
+      "image": "",
+      "role": "HOD",
+      "id": 9
+    },
+    {
+      "name": "priya p",
+      "username": "priya123",
+      "email": "priya@gmail.com",
+      "contact": 876525667,
+      "department": "Mechanical",
+      "password": "1234567890",
+      "image": "",
+      "role": "staff",
+      "id": 10
+    },
+    {
+      "name": "",
+      "username": "",
+      "email": "",
+      "contact": "",
+      "department": "",
+      "password": "",
+      "image": "",
+      "role": "",
+      "id": 11
+    },
+    {
+      "name": "",
+      "username": "",
+      "email": "",
+      "contact": "",
+      "department": "",
+      "password": "",
+      "image": "",
+      "role": "",
+      "id": 12
+    },
+    {
+      "name": "Isha Gupta",
+      "username": "isha123",
+      "email": "isha@gmail.com",
+      "contact": "9876543210",
+      "department": "Civil",
+      "password": "123456789",
+      "image": "",
+      "role": "HOD",
+      "id": 13
+    },
+    {
+      "name": "alisha",
+      "username": "alish123",
+      "email": "alisha@gmail.com",
+      "contact": "9876535678",
+      "department": "Civil",
+      "password": "1234567890",
+      "image": "",
+      "role": "staff",
+      "id": 14
+    },
+    {
+      "name": "radha",
+      "username": "radha45",
+      "email": "radha@gmail",
+      "contact": "9876520763",
+      "department": "Civil",
+      "password": "1234567890",
+      "image": "",
+      "role": "HOD",
+      "id": 15
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "leaves": [
+    {
+      "from_date": {
+        "year": 2022,
+        "month": 8,
+        "day": 17
+      },
+      "to_date": {
+        "year": 2022,
+        "month": 8,
+        "day": 15
+      },
+      "reason": "ert",
+      "username": "user1",
+      "status": "REJECTED",
+      "id": 4
+    },
+    {
+      "from_date": {
+        "year": 2022,
+        "month": 8,
+        "day": 20
+      },
+      "to_date": {
+        "year": 2022,
+        "month": 8,
+        "day": 19
+      },
+      "reason": "testing",
+      "username": "user1",
+      "status": "REJECTED",
+      "id": 5
+    },
+    {
+      "from_date": {
+        "year": 2022,
+        "month": 9,
+        "day": 1
+      },
+      "to_date": {
+        "year": 2022,
+        "month": 9,
+        "day": 4
+      },
+      "reason": "xvd",
+      "username": "priyanka12",
+      "status": "REJECTED",
+      "id": 7
+    },
+    {
+      "from_date": {
+        "year": 2022,
+        "month": 9,
+        "day": 3
+      },
+      "to_date": {
+        "year": 2022,
+        "month": 9,
+        "day": 4
+      },
+      "reason": "hh",
+      "username": "priyanka12",
+      "status": "REJECTED",
+      "id": 8
+    },
+    {
+      "from_date": {
+        "year": 2022,
+        "month": 9,
+        "day": 18
+      },
+      "to_date": {
+        "year": 2022,
+        "month": 9,
+        "day": 25
+      },
+      "reason": "",
+      "username": "priyanka12",
+      "status": "REJECTED",
+      "id": 9
+    },
+    {
+      "from_date": {
+        "year": 2022,
+        "month": 9,
+        "day": 4
+      },
+      "to_date": {
+        "year": 2022,
+        "month": 9,
+        "day": 11
+      },
+      "reason": "xcvnc",
+      "username": "priya123",
+      "status": "APPROVED",
+      "id": 10
+    },
+    {
+      "from_date": {
+        "year": 2022,
+        "month": 9,
+        "day": 1
+      },
+      "to_date": {
+        "year": 2022,
+        "month": 9,
+        "day": 3
+      },
+      "reason": "Health issue",
+      "username": "alish123",
+      "status": "APPROVED",
+      "id": 11
+    },
+    {
+      "from_date": {
+        "year": 2022,
+        "month": 9,
+        "day": 8
+      },
+      "to_date": {
+        "year": 2022,
+        "month": 9,
+        "day": 10
+      },
+      "reason": "family function",
+      "username": "alish123",
+      "status": "APPROVED",
+      "id": 12
+    },
+    {
+      "from_date": {
+        "year": 2022,
+        "month": 9,
+        "day": 7
+      },
+      "to_date": {
+        "year": 2022,
+        "month": 9,
+        "day": 10
+      },
+      "reason": "sisters \nmarriage ",
+      "username": "priya123",
+      "status": "PENDING",
+      "id": 13
+    }
+  ]
+}

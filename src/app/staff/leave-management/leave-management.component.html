@@ -1,0 +1,101 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color: rgb(239, 247, 249);">Leave management System</h1>
+        <div class="d-flex">
+        </div>
+    </div>
+</nav>
+
+<div class="row mx-5 mt-5">
+    <div class="col-12 text-center" *ngIf="leaveDetails.length <=0">No leaves applied</div>
+    <div class="col-12 text-end">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Apply Leave</button>
+    </div>
+    <table class="table" *ngIf="leaveDetails.length > 0">
+        <thead>
+            <tr>
+                <th>Sr. No.</th>
+                <th>From Date</th>
+                <th>To Date</th>
+                <th>Reason</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of leaveDetails; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{item.from_date.day}} - {{item.from_date.month}} - {{item.from_date.year}}</td>
+                <td>{{item.to_date.day}} - {{item.to_date.month}} - {{item.to_date.year}}</td>
+                <td>{{item.reason}}</td>
+                <td>{{item.status}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="RevokeLeave(item)">Revoke</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title"><b>Apply Leave</b></h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form class="row" [formGroup]="leaveForm">
+                    <label for="date" class="col-2 col-form-label mb-2">From</label>
+                    <div class="col-10 mb-2">
+                        <div class="input-group">
+                            <input class="form-control" placeholder="yyyy-mm-dd" name="dp" formControlName="from_date"
+                                ngbDatepicker #d="ngbDatepicker">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <label for="date" class="col-2 col-form-label mb-2">To</label>
+                    <div class="col-10 mb-2">
+                        <div class="input-group">
+                            <input class="form-control" placeholder="yyyy-mm-dd" name="dp2" formControlName="to_date"
+                                ngbDatepicker #d2="ngbDatepicker">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <label for="comment" class="col-2 mb-2 col-form-label">Reason:</label>
+                    <div class="col-10 mb-2">
+                        <textarea class="form-control" rows="2" id="comment" name="text"
+                            formControlName="reason"></textarea>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="onSubmitLeave()">Apply</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#datepicker').datepicker();
+    });
+</script>
